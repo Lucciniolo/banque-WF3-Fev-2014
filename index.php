@@ -23,6 +23,8 @@ spl_autoload_register(function ($class) {
 
 <h1>Bienvenue sur le site de la WF-Banque</h1>
 
+ <h2>Mouvements  </h2>
+
 <?php 
 	$compte1 = new Compte(1, 15000, 500);
 	$compte2 = new Compte(2, 20000, 0);
@@ -34,10 +36,27 @@ spl_autoload_register(function ($class) {
 	$client1->compte->crediterCompte(100);
 	$client1->afficherInformations();
 
-	if($client1->compte->debiterCompte(100))
+	if($client1->compte->debiterCompte(10000000000000))
 		$client1->afficherInformations();
 	else
 		echo "Tentative de depassement de votre decouvert <br>";
+	
+	$client1->afficherInformations();
+
+
+	$compte1->setDecouvert(12);
+	$compte1->afficherInformations();
+
+ ?>
+
+
+
+ <h2>Informations sur les comptes</h2>
+
+<?php 
+	$compte1->afficherInformations();
+	$compte2->afficherInformations();
+	$compte3->afficherInformations();
  ?>
 
 <!-- Latest compiled and minified CSS -->

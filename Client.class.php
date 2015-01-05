@@ -22,8 +22,9 @@ class Client{
     } 
 
     public function afficherInformations(){
-    	echo "     Les informations du client <b>numero ". $this->numero ."</b> : <br> son nom : ". $this->nom ." <br> son compte est crédité de ". $this->compte->solde .": <br><br>";
+    	echo "     Les informations du client <b>numero ". $this->numero ."</b> : <br> son nom : ". $this->nom ." <br> son compte est crédité de ". $this->compte->getSolde() .": <br><br>";
     }
+
 }
 
 
