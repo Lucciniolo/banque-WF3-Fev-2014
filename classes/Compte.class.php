@@ -2,9 +2,33 @@
 
  class Compte{
 	// public $proprietaire;
-	public $numero;
-	private $solde = 0;
-	public $decouvert;
+	private $numero;
+	private $solde;
+	private $decouvert;
+
+	public function getNumero(){
+		return $this->numero;
+	}
+	
+	public function getSolde(){
+		return $this->solde;
+	}	
+
+	public function getDecouvert(){
+		return $this->decouvert;
+	}
+
+	public function setNumero($pNumero){
+		$this->numero = $pNumero;
+	}
+	
+	public function setSolde($pSolde){
+		$this->solde = $pSolde;
+	}	
+
+	public function setDecouvert($pDecouvert){
+		$this->decouvert = $pDecouvert;
+	}
 
 	public static $nombreDeCompte = 0;
 
@@ -16,13 +40,6 @@
 		self::$nombreDeCompte++;
     } 
 
-	public function setDecouvert($valeur){
-		$this->decouvert = $valeur;
-	}
-
-	public function getSolde(){
-		return $this->solde;
-	}
 
 	public function crediterCompte($valeur){
 		$this->solde = $this->solde + $valeur;
