@@ -7,10 +7,10 @@ include 'header.php'; ?>
 	// Afin de simplifier l'exercice, on spéficie ici 3 comptes et 3 clients.
 
 	$client1->afficherInformations();
-	$client1->compte->crediterCompte(100);
+	$client1->getCompte()->crediterCompte(100);
 	$client1->afficherInformations();
 
-	if($client1->compte->debiterCompte(10000000000000))
+	if($client1->getCompte()->debiterCompte(10000000000000))
 		$client1->afficherInformations();
 	else
 		echo "Tentative de depassement de votre decouvert <br>";

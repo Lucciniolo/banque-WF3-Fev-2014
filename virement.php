@@ -38,13 +38,31 @@ if (isset($_POST['montant']) AND isset($_POST['clientADebiter']) AND isset($_POS
 	echo "Client crédité : ". $clients[$_POST['clientACrediter']]->getNom(). " ". $clients[$_POST['clientACrediter']]->getPrenom() ."<br>";
 
 
-	$clients[$_POST['clientADebiter']]->afficherInformations();
-	$clients[$_POST['clientADebiter']]->virement($clients[$_POST['clientACrediter']], $_POST['montant']);
-	$clients[$_POST['clientADebiter']]->afficherInformations();
+	// ------------  RECUPERATION DES DONNEES DU FORMULAIRE --------------- 
 
+	// Récupère le numéro des clients à débiter et à créditer transmis par le formulaire.
+	$numeroClientADebiter = $_POST['clientADebiter'];
+	$numeroClientACrediter = $_POST['clientACrediter'];
 
+	// On récupère le montant transmis par le formulaire
+	$montant = $_POST['montant'];
+
+	// ----------------------------------------------------------------------
+
+	echo "DEBUG : ". $_POST['clientACrediter'];
+	// On récupère les  client à débiter et à créditer.
+	$clientADebiter = $clients[$numeroClientADebiter];
+	$clientACrediter = $clients[$numeroClientACrediter];
+
+	// On affiche le client à débiter.
+	$clientADebiter->afficherInformations();
+
+	// On effectue le virement
+	$clientADebiter->virement($clientACrediter, $montant);
+	
+	// On affiche le client à débiter à nouveau.
+	$clientADebiter->afficherInformations();
 }
-
 include 'footer.php';
 
  ?>
