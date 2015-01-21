@@ -1,5 +1,5 @@
 <?php 
-class Entreprise extends Client{
+class Association extends Client{
 	private $nom;
 	private $president;
 	private $tresorier;

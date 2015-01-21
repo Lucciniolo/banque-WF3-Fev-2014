@@ -47,7 +47,7 @@ if (isset($_POST['montant']) AND isset($_POST['clientADebiter']) AND isset($_POS
 	// On récupère le montant transmis par le formulaire
 	$montant = $_POST['montant'];
 
-	// ----------------------------------------------------------------------
+	// --------------------------------------------------------------------
 
 	echo "DEBUG : ". $_POST['clientACrediter'];
 	// On récupère les  client à débiter et à créditer.

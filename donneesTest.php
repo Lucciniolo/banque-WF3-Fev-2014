@@ -9,7 +9,7 @@
 	$comptes[$compte1->getNumero()] = $compte1;
 	$comptes[$compte2->getNumero()] = $compte2;
 	$comptes[$compte3->getNumero()] = $compte3;
-
+	
 	// La lists des clients.
 	$clients = array();	
 	$client1 = new Client($compte1, 1, "priche", "Julien", "3 Rue du Perdu, PARIS");
